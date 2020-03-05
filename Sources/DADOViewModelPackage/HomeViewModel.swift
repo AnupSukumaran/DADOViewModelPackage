@@ -8,6 +8,8 @@
 
 import UIKit
 import SASLogger
+import SASStringAttributePack
+
 
 public class HomeViewModel: NSObject {
     
