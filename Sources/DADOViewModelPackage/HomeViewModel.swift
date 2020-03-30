@@ -48,7 +48,7 @@ public class HomeViewModel: NSObject {
         return titleString
     }
     
-    public func sectionView(_ tableView: UITableView,_ section: Int, items: [String],_ bgClr: UIColor,_ fontSize: CGFloat) -> UIView? {
+    public func sectionView(_ tableView: UITableView,_ section: Int, items: [String],_ bgClr: UIColor, fontSize: CGFloat) -> UIView? {
         var vi: UIView?
         if tableView.tag == 2 {
            vi = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 28))
@@ -57,7 +57,7 @@ public class HomeViewModel: NSObject {
            let titleLabel = UILabel(frame: CGRect(x: 16, y: 0, width: (vi?.frame.width)!, height: (vi?.frame.height)!))
            vi?.addSubview(titleLabel)
            titleLabel.attributedText = NSMutableAttributedString()
-           .newFontSize(items[section], fSize: fontSize)
+            .newFontSize(stringValue: items[section], fSize: 14)
 
         } else {
            vi = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 0))
