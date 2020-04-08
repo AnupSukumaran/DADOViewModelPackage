@@ -14,7 +14,7 @@ import SASStringAttributePack
 public class HomeViewModel: NSObject {
     
     public var table: UITableView!
-    
+    public var titleLabel = UILabel()
     override init() {
         super.init()
     }
@@ -44,6 +44,7 @@ public class HomeViewModel: NSObject {
         var titleString = ""
         if tableView.tag == 2 {
            titleString = items[section]
+            
         }
         return titleString
     }
@@ -54,8 +55,9 @@ public class HomeViewModel: NSObject {
            vi = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 28))
            vi!.backgroundColor = bgClr
            
-           let titleLabel = UILabel(frame: CGRect(x: 16, y: 0, width: (vi?.frame.width)!, height: (vi?.frame.height)!))
+           titleLabel = UILabel(frame: CGRect(x: 16, y: 0, width: (vi?.frame.width)!, height: (vi?.frame.height)!))
            vi?.addSubview(titleLabel)
+            
            titleLabel.attributedText = NSMutableAttributedString()
             .newFontSize(stringValue: items[section], fSize: 14)
 
